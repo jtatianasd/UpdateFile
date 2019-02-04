@@ -33,6 +33,11 @@ namespace AspNetMVCFileUpload.Controllers
             if (file.ContentLength > 0)
             {
                 string fileName = Path.GetFileName(file.FileName);
+                string Dicrectory = Path.Combine(Server.MapPath("~/Files/"));
+                if(!System.IO.Directory.Exists(Dicrectory))
+                {
+                    System.IO.Directory.CreateDirectory(Dicrectory);
+                }
                 string filePath = Path.Combine(Server.MapPath("~/Files/"), fileName);
                 file.SaveAs(filePath);
             }
