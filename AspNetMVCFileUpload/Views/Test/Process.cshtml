@@ -1,0 +1,52 @@
+﻿@model TestViewModel
+@{
+    ViewBag.Title = "Process";
+}
+
+
+
+
+@using (Html.BeginForm("Process", "Test", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{<center>
+     <h2>Procesar Registro</h2>
+    </center>
+    <br />
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <div class="col-md-12">
+
+                @Html.Label("Id Employee", new { @class = "col-md-2 control-label" })
+
+                @Html.TextBox("number", "", new { type = "input", name = "number", @class = "form-control" })
+
+
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-12">
+
+                @Html.Label("Input File", new { @class = "col-md-2 control-label" })
+
+
+                @Html.TextBox("file", "", new { type = "file", @class = "form-control-file" })
+                @ViewBag.Message
+
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Procesar Archivo" class="btn btn-default" />
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+
+
+}

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TestViewModel>
+<p>
+    @Html.ActionLink("Nuevo registro", "Process")
+  
+</p>
+<table class="table">
+    <tr>
+        <th>Number Employee</th>
+        <th>File Name</th>
+        <th>Date</th>
+    
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @item.NumberEmployee
+        </td>
+        <td>
+            @item.File_Name
+        </td>
+        <td>
+            @item.Date
+        </td>
+
+    </tr>
+    }
+</table>
